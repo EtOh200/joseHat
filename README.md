@@ -5,7 +5,6 @@ Public Domain hosted on Heroku.
 - https://josehatchry.herokuapp.com/
 - Possible endpoint: [CAN, USA, MEX, BLZ, GTM, SLV, HND, NIC, CRI, PAN]
 - *End point are not case sensitive*
-__
 ## Problem
 
 With provided Country List, find all the Country a driver mush travel through to reach final destination.
@@ -33,7 +32,7 @@ Create an endpoint where we can send a country code and see the list of countrie
 - Example:
   - ```www.yourdomainname.com/BLZ```
   - ```["USA", "MEX", "BLZ"]```
-__
+
 ## Implementation
 ### File Structure 
 - server.js:
