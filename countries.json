@@ -1,0 +1,42 @@
+[
+  {
+    "destination": "USA",
+    "borders": ["CAN", "MEX"]
+  },
+  {
+    "destination": "CAN",
+    "borders": ["USA"]
+  },
+  {
+    "destination": "MEX",
+    "borders": ["USA", "GTM", "BLZ"]
+  },
+  {
+    "destination": "BLZ",
+    "borders": ["MEX", "GTM"]
+  },
+  {
+    "destination": "GTM",
+    "borders": ["BLZ", "MEX", "HND", "SLV"]
+  },
+  {
+    "destination": "SLV",
+    "borders": ["GTM", "HND"]
+  },
+  {
+    "destination": "HND",
+    "borders": ["GTM", "SLV", "NIC"]
+  },
+  {
+    "destination": "NIC",
+    "borders": ["HND", "CRI"]
+  },
+  {
+    "destination": "CRI",
+    "borders": ["NIC", "PAN"]
+  },
+  {
+    "destination": "PAN",
+    "borders": ["CRI"]
+  }
+]
