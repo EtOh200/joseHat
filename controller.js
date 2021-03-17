@@ -13,6 +13,12 @@ Controller.getGraph = (req, res, next) => {
   const graph = new Graph();
 
   const country = data; 
+  if(!country) {
+    //if country is undefined = file not created or not read 
+      //return error message 
+      console.log(res.locals.tree)
+    return res.status(400).send('Database error')
+  }
 
   for(let i = 0; i < country.length; i++) {
     let dst = country[i].destination; // dst = destination value, 'USA'
@@ -36,16 +42,21 @@ Controller.getGraph = (req, res, next) => {
   next();
 };
 
-//graph could be saved after running  
+//graph could be saved after running once
   //have a checker function to see database(countries) has been updated
     //if not, use the same graph
       //else re-run getGraph 
 
 Controller.getLocation = (req, res, next) => {
-  const dataGraph = res.locals.tree // graph passed from getGraph
+  const dataGraph = res.locals.tree; // graph passed from getGraph
   const requestedDestination = req.route.path;
   //clean up path, not case sensitive
   const cleanedDestination = requestedDestination.replace(/[^a-zA-Z ]/,"")
+
+  //set error handling. if dataGraph is undefined, return error msg
+  if(!dataGraph) {
+    return res.status(400).send('Error retrieving Country List')
+  }
 
   let start = dataGraph.setStart('USA'); //set start point on graph
   let end = dataGraph.setEnd(cleanedDestination) //set end point on graph
